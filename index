@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Durga Puja Wishes</title>
+<style>
+body {
+  background: linear-gradient(to bottom, #ffecd1, #fff5e1);
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+  padding: 50px;
+  overflow: hidden; /* For falling flowers */
+}
+h1 {
+  color: #d62828;
+  font-size: 50px;
+  text-shadow: 2px 2px #ffba08;
+}
+.diya {
+  font-size: 70px;
+  animation: flicker 1s infinite alternate;
+}
+@keyframes flicker {
+  from {opacity: 0.5;}
+  to {opacity: 1;}
+}
+p {
+  font-size: 20px;
+  color: #333;
+}
+.blessing {
+  margin-top: 30px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #2a9d8f;
+}
+.flower {
+  position: absolute;
+  top: -50px;
+  font-size: 30px;
+  animation: fall 8s linear infinite;
+}
+@keyframes fall {
+  0% { transform: translateY(0) rotate(0deg); }
+  100% { transform: translateY(100vh) rotate(360deg); }
+}
+</style>
+</head>
+<body>
+  <h1>🔱 शुभ दुर्गा पूजा 🔱</h1>
+  <div class="diya">🪔 🪔 🪔</div>
+  <p>May Maa Durga remove all your <b>bugs & errors</b> and bless your projects with <b>success & creativity</b>. 🚩</p>
+  <div class="blessing">Happy Coding • Happy Puja • जय माता दी</div>
+
+  <!-- Background Music -->
+  <audio autoplay loop>
+    <source src="https://www2.cs.uic.edu/~i101/SoundFiles/StarWars60.wav" type="audio/wav">
+    Your browser does not support the audio element.
+  </audio>
+
+  <!-- Falling Flowers Script -->
+  <script>
+    function createFlower() {
+      const flower = document.createElement("div");
+      flower.classList.add("flower");
+      flower.innerHTML = "🌸";
+      flower.style.left = Math.random() * window.innerWidth + "px";
+      flower.style.animationDuration = (5 + Math.random() * 5) + "s"; 
+      document.body.appendChild(flower);
+
+      setTimeout(() => {
+        flower.remove();
+      }, 10000);
+    }
+
+    setInterval(createFlower, 500);
+  </script>
+</body>
+</html>
